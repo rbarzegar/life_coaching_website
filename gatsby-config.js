@@ -1,35 +1,36 @@
 module.exports = {
   siteMetadata: {
-    title: "life_coaching",
+    title: 'life_coaching'
   },
   plugins: [
-    "gatsby-plugin-emotion",
-    "gatsby-plugin-sharp",
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sitemap",
     {
-      resolve: "gatsby-plugin-manifest",
+      resolve: `gatsby-plugin-typography`,
       options: {
-        icon: "src/images/icon.png",
-      },
+        pathToConfigModule: `src/utils/typography`
+      }
     },
-    "gatsby-transformer-remark",
-    "gatsby-transformer-sharp",
+    'gatsby-plugin-emotion',
+    'gatsby-plugin-sharp',
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sitemap',
+    // 'gatsby-plugin-manifest',
+    'gatsby-transformer-remark',
+    'gatsby-transformer-sharp',
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "images",
-        path: "./src/images/",
+        name: 'images',
+        path: './src/images/'
       },
-      __key: "images",
+      __key: 'images'
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "pages",
-        path: "./src/pages/",
+        name: 'pages',
+        path: './src/pages/'
       },
-      __key: "pages",
-    },
-  ],
-};
+      __key: 'pages'
+    }
+  ]
+}
