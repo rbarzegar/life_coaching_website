@@ -7,3 +7,7 @@ export const container = css`
     padding: 1rem 0.75rem;
   }
 `
+
+export const paddingLeftIndent = css`
+  padding-left: 2rem;
+`

@@ -1,6 +1,6 @@
 import React from 'react'
 import { css } from '@emotion/react'
-import { container } from '../../styles/layoutComponents'
+import { paddingLeftIndent, container } from '../../styles/layoutComponents'
 import Image from '../image'
 import { mqMin, mqMax } from '../../styles/breakpoints'
 
@@ -30,8 +30,10 @@ const heroStyles = {
   headline: css`
     font-size: 4rem;
     font-weight: 400;
+    ${paddingLeftIndent}
     ${mqMax[1]} {
       text-align: center;
+      padding-left: 0;
     }
   `,
   spanRoland: css`
@@ -57,6 +59,11 @@ const heroStyles = {
     display: inline-block;
     font-style: italic;
     padding: 0.15rem 0.4rem 0.15rem 0;
+    margin-left: 2rem;
+    line-height: 1.3rem;
+    ${mqMax[1]} {
+      padding-left: 0;
+    }
   `
 }
 
@@ -68,7 +75,10 @@ const Hero = () => {
           <h1 css={heroStyles.headline}>
             Hi, I'm <span css={heroStyles.spanRoland}>Roland</span>, and I'm here to help you <span css={heroStyles.spanGYST}>Get Your Sh*t Together</span>.
           </h1>
-          <blockquote css={heroStyles.quote}>"You make your own luck if you stay at it long enough." - Naval Ravikant</blockquote>
+          <blockquote css={heroStyles.quote}>
+            &nbsp;"You make your own luck if you stay at it long enough." <br />
+            &nbsp;Naval Ravikant
+          </blockquote>
         </div>
         <div css={heroStyles.hero_image}>
           <Image imgStyle={{ objectFit: 'cover', objectPosition: '0% 20%' }} css={heroStyles.image} src='hero_roland.jpg' alt='Roland Barzegar' />

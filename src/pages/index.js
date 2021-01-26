@@ -1,6 +1,7 @@
 import React from 'react'
 import Layout from '../components/layout'
 import Hero from '../components/home/hero'
+import ThisIsMe from '../components/home/thisisme'
 
 // markup
 const IndexPage = () => {
@@ -8,6 +9,7 @@ const IndexPage = () => {
     <>
       <Layout>
         <Hero />
+        <ThisIsMe />
       </Layout>
     </>
   )
