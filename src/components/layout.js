@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from './header'
 import Footer from './footer'
+import { Helmet } from 'react-helmet'
 import { Global, css } from '@emotion/react'
 import emotionNormalize from 'emotion-normalize'
 import { globalstyles, colors } from '../styles/globalStyles'
@@ -8,6 +9,9 @@ import { globalstyles, colors } from '../styles/globalStyles'
 const Layout = ({ children }) => {
   return (
     <>
+      <Helmet>
+        <title>Roland Barzegar | Life Coach</title>
+      </Helmet>
       <Global
         styles={css`
           ${emotionNormalize}

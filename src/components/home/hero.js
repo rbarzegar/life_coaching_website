@@ -1,8 +1,13 @@
 import React from 'react'
 import { css } from '@emotion/react'
+import { useStaticQuery, graphql } from 'gatsby'
 import { paddingLeftIndent, container } from '../../styles/layoutComponents'
 import Image from '../image'
 import { mqMin, mqMax } from '../../styles/breakpoints'
+
+// GRAPHQL
+
+// STYLES
 
 const heroStyles = {
   wrapper: css`
@@ -67,7 +72,21 @@ const heroStyles = {
   `
 }
 
+// COMPONENT
+
 const Hero = () => {
+  const data = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+            quote
+          }
+        }
+      }
+    `
+  )
   return (
     <div css={heroStyles.wrapper}>
       <div css={heroStyles.gridContainer}>
@@ -76,7 +95,7 @@ const Hero = () => {
             Hi, I'm <span css={heroStyles.spanRoland}>Roland</span>, and I'm here to help you <span css={heroStyles.spanGYST}>Get Your Sh*t Together</span>.
           </h1>
           <blockquote css={heroStyles.quote}>
-            &nbsp;"You make your own luck if you stay at it long enough." <br />
+            "{data.site.siteMetadata.quote}" <br />
             &nbsp;Naval Ravikant
           </blockquote>
         </div>

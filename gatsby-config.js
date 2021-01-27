@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: 'life_coaching'
+    title: 'life_coaching',
+    quote: 'Desire is a contract that you make with yourself to be unhappy until you get what you want.'
   },
   plugins: [
     {
